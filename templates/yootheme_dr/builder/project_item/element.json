@@ -1,0 +1,107 @@
+{
+    "name": "project_item",
+    "title": "Item",
+    "width": 500,
+    "container": true,
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "content": {
+            "label": "Tech stacks",
+            "type": "content-items",
+            "item": "project_item_tech",
+            "media": {
+                "type": "image",
+                "item": {"title": "title", "image": "src"}
+            }
+        },
+        "title": {
+            "label": "Title",
+            "source": true
+        },
+        "subtitle": {
+            "label": "Title",
+            "source": true
+        },
+        "meta": {
+            "label": "Meta",
+            "source": true
+        },
+        "image": {
+            "label": "Image",
+            "type": "image",
+            "source": true
+        },
+        "image_alt": {
+            "label": "Image Alt",
+            "enable": "image",
+            "source": true
+        },
+        "video": {
+            "label": "Video",
+            "type": "video",
+            "source": true
+        },
+        "link": {
+            "label": "Link",
+            "type": "link",
+            "description": "Enter or pick a link, an image or a video file.",
+            "attrs": {
+                "placeholder": "http://"
+            },
+            "source": true
+        },
+        "image_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true,
+            "enable": "image"
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "title",
+                        "subtitle",
+                        "meta",
+                        "image",
+                        "image_alt",
+                        "video",
+                        "link",
+                        "content"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Image",
+                            "type": "group",
+                            "fields": ["image_focal_point"]
+                        }
+                    ]
+                },
+                "${builder.advancedItem}"
+            ]
+        }
+    }
+}

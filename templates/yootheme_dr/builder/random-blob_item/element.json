@@ -1,0 +1,104 @@
+{
+    "name": "random-blob_item",
+    "title": "Item",
+    "width": 500,
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "defaults": {
+        "background_gradient_1": "#8884FF",
+        "background_gradient_2": "#00C49A"
+    },
+    "fields": {
+        "top": {
+            "label": "Top",
+            "type": "range"
+        },
+        "bottom": {
+            "label": "Bottom",
+            "type": "range"
+        },
+        "left": {
+            "label": "Left",
+            "type": "range"
+        },
+        "right": {
+            "label": "Right",
+            "type": "range"
+        },
+        "width": {
+            "attrs": {
+                "placeholder": "5rem"
+            }
+        },
+        "height": {
+            "attrs": {
+                "placeholder": "5rem"
+            }
+        },
+        "background_gradient_1": {
+            "label": "First",
+            "type": "color"
+        },
+        "background_gradient_2": {
+            "label": "Second",
+            "type": "color"
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        {
+                            "label": "Position",
+                            "type": "group",
+                            "fields": [
+                                "top",
+                                "bottom",
+                                "left",
+                                "right"
+                            ]
+                        },
+                        {
+                            "label": "Dimension",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                {
+                                    "label": "Width",
+                                    "type": "group",
+                                    "fields": [
+                                        "width"
+                                    ]
+                                },
+                                {
+                                    "label": "Height",
+                                    "type": "group",
+                                    "fields": [
+                                        "height"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Gradient Background",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "background_gradient_1",
+                                "background_gradient_2"
+                            ]
+                        }
+                    ]
+                },
+                "${builder.advancedItem}"
+            ]
+        }
+    }
+}

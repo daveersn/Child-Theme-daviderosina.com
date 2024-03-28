@@ -1,0 +1,16 @@
+{
+    "name": "daviderosina/portfolio",
+    "description": "My personal Portfolio",
+    "autoload": {
+        "psr-4": {
+            "Daviderosina\\Portfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Davide Rosina",
+            "email": "xdavi01@gmail.com"
+        }
+    ],
+    "require": {}
+}

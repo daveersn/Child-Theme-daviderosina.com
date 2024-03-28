@@ -1,0 +1,16 @@
+/*
+!/templates/
+/templates/*
+!/templates/yootheme_dr
+/templates/yootheme_dr/css/*
+!/templates/yootheme_dr/css/custom.css
+/templates/yootheme_dr/js/*
+!/templates/yootheme_dr/js/custom.js
+/templates/yootheme_dr/vendor
+/templates/yootheme_dr/myicons
+/templates/yootheme_dr/fonts
+/templates/yootheme_dr/mix-manifest.json
+
+node_modules
+
+.DS_Store

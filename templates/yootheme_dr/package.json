@@ -1,0 +1,22 @@
+{
+  "name": "yootheme_dr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "prettier": "3.2.5"
+  },
+  "dependencies": {
+    "gsap": "file:_dev/gsap-bonus.tgz",
+    "TagCloud": "^2.4.0"
+  }
+}

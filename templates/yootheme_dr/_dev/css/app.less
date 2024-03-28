@@ -1,0 +1,352 @@
+@import "satoshi.css";
+
+@base-color: #00171f;
+@inverse-base-color: #fbf5f3;
+@primary-color: #00c49a;
+@secondary-color: #8884ff;
+@muted-color: #7a78a2;
+@breakpoint-2xlarge: 2000px;
+@breakpoint-xlarge: 1600px;
+@breakpoint-large: 1200px;
+@breakpoint-medium: 960px;
+@breakpoint-small: 640px;
+
+.uk-text-secondary {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    -89deg,
+    @secondary-color 60%,
+    @primary-color 100%
+  );
+  background: -webkit-linear-gradient(
+    -89deg,
+    @secondary-color 60%,
+    @primary-color 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+}
+
+.uk-text-secondary::selection {
+  -webkit-text-fill-color: #fff;
+  color: white;
+  background-color: @secondary-color;
+}
+
+a.uk-button-text {
+  background-image: linear-gradient(
+    34deg,
+    @secondary-color 60%,
+    @primary-color 100%
+  );
+  background-position-y: 100%;
+  background-size: 100% 0.2rem;
+  background-repeat: no-repeat;
+  transition: 0.4s cubic-bezier(0.66, 0.02, 0, 1.08);
+  font-weight: 600;
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+.tag-cloud {
+  .tagcloud {
+    margin: auto;
+  }
+
+  .el-image svg {
+    width: 2.3rem;
+    height: auto;
+  }
+}
+
+.tag-decoration {
+  position: relative;
+  &::before {
+    content: "<";
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+      -89deg,
+      @secondary-color 60%,
+      @primary-color 100%
+    );
+    background: -webkit-linear-gradient(
+      -89deg,
+      @secondary-color 60%,
+      @primary-color 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+  }
+  &::after {
+    content: "/>";
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+      -89deg,
+      @secondary-color 60%,
+      @primary-color 100%
+    );
+    background: -webkit-linear-gradient(
+      -89deg,
+      @secondary-color 60%,
+      @primary-color 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+#header-section {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+}
+
+.random-blob {
+  position: absolute;
+  border: 1px solid;
+}
+
+.projects-element {
+  .tile-container {
+    padding: 7rem 3rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 0.05rem solid rgba(0, 0, 0, 0.05);
+  }
+
+  .content-container {
+    padding: 1rem;
+
+    > :first-child {
+      transform: translateY(90%);
+      transition: 0.3s ease-out;
+    }
+
+    > :last-child {
+      transform: translateY(200%);
+      transition: 0.3s ease-out;
+    }
+
+    .el-title {
+      font-size: 1rem;
+      white-space: nowrap;
+      color: @muted-color;
+    }
+
+    .el-subtitle {
+      font-size: 0.6rem;
+      color: @muted-color;
+    }
+
+    .el-meta {
+      color: @muted-color;
+      font-size: 0.6rem;
+      text-align: right;
+    }
+  }
+
+  .image-container {
+    border-radius: 0.25rem;
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.2s ease-out;
+  }
+
+  .tile-container:hover .image-container {
+    transform: scale(1.02);
+  }
+
+  .tile-container:hover .content-container > :first-child {
+    transform: translateY(0);
+  }
+
+  .tile-container:hover .content-container > :last-child {
+    transform: translateY(0);
+  }
+
+  .el-tech-stack svg {
+    width: 1rem;
+  }
+
+  .uk-slidenav-previous svg {
+    transform: rotate(180deg);
+  }
+
+  .uk-slidenav-next {
+    left: 99%;
+  }
+
+  .uk-slidenav-previous {
+    right: 99%;
+  }
+
+  .uk-slidenav {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: fadeout(@muted-color, 80%);
+  }
+}
+
+#module-menu-navbar [uk-scrollspy-nav] > li > a.uk-active {
+  color: @base-color;
+  font-weight: 600;
+}
+
+.uk-light #module-menu-navbar [uk-scrollspy-nav] > li > a.uk-active {
+  color: @inverse-base-color;
+}
+
+#module-menu-navbar .uk-button.uk-button-text {
+  display: flex;
+  transition: 0.4s cubic-bezier(0.66, 0.02, 0, 1.08);
+  font-weight: 600;
+  color: @base-color;
+  column-gap: 0;
+
+  > .uk-icon {
+    order: 2;
+    margin-right: 0 !important;
+    margin-left: 0.5rem;
+  }
+
+  &:hover {
+    color: @inverse-base-color;
+  }
+}
+
+.uk-light #module-menu-navbar .uk-button.uk-button-text {
+  color: @inverse-base-color;
+}
+
+#module-menu-dialog-mobile .uk-subnav {
+  margin-left: 0;
+  > * {
+    width: 100%;
+    padding: 1rem 0rem;
+
+    > a {
+      font-size: 2rem;
+      justify-content: center;
+
+      &.uk-active {
+        color: #fff;
+      }
+
+      &.uk-button {
+        width: fit-content;
+        transition: 0.4s cubic-bezier(0.66, 0.02, 0, 1.08);
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: @breakpoint-xlarge) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: @breakpoint-2xlarge) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: @breakpoint-xlarge) {
+  .tag-cloud {
+    .el-image svg {
+      width: 2rem;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: @breakpoint-large) {
+  .tag-cloud {
+    .el-image svg {
+      width: 1.5rem;
+      height: auto;
+    }
+
+    .el-title {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: @breakpoint-medium) {
+  html {
+    font-size: 19px;
+  }
+
+  .projects-element {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    .content-container {
+      padding: 1rem 1rem;
+    }
+
+    .tile-container {
+      padding: 2rem 1.3rem 6rem;
+    }
+
+    .uk-active {
+      .tile-container {
+        .image-container {
+          transform: scale(1.05);
+        }
+
+        .content-container > :first-child {
+          transform: translateY(0);
+        }
+
+        .content-container > :last-child {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  .header-title {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .mobile-secondary-color {
+    color: @secondary-color;
+  }
+
+  .tag-decoration {
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: @breakpoint-small) {
+  html {
+    font-size: 19px;
+  }
+
+  .tag-cloud .el-title {
+    font-size: 0.9rem;
+  }
+
+  .header-title {
+    font-size: 2.6rem;
+  }
+
+  .header-subtitle {
+    font-size: 1.4rem;
+  }
+}
