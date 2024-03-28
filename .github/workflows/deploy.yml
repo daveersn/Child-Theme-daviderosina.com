@@ -42,7 +42,7 @@ jobs:
       - name: Zip Contents
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r release.zip ./ -x ./*.git* -x ./templates/yootheme_dr/node_modules/ -x ./templates/yootheme_dr/_dev/
+          args: zip -qq -r release.zip ./ -x ./*.git*/\* -x ./templates/yootheme_dr/node_modules/\* -x ./templates/yootheme_dr/_dev/\*
 
       - name: Copy Zip over SSH
         uses: appleboy/scp-action@master
